@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://devConnector:~Sin2+Cos2=1~@devconnector.eo8rn.mongodb.net/devConnector?retryWrites=true&w=majority",
+  "jwtToken": "userAccessToken"
+}
