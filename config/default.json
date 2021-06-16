@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://devConnector:~Sin2+Cos2=1~@devconnector.eo8rn.mongodb.net/devConnector?retryWrites=true&w=majority",
-  "jwtToken": "userAccessToken"
-}
+  "jwtToken": "userAccessToken",
+  "githubClientId": "ab5d214b390c04218e54",
+  "githubSecret": "5dbb6b89537c58d74a376145a6226afd8ebbbc00"
+  }
