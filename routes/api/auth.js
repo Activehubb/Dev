@@ -60,7 +60,7 @@ router.post('/', [
         { expiresIn: 36000 },
         (err, token) => {
           if (err) throw err;
-          console.log(token)
+          res.json(token)
         })
       console.log(req.body)
       res.send('User Login')
