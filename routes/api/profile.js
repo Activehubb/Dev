@@ -1,4 +1,5 @@
 const express = require("express");
+const Post = require('../../modules/Post')
 const Profile = require("../../modules/Profile");
 const User = require("../../modules/User");
 const router = express.Router();
@@ -164,7 +165,7 @@ router.get("/user/:user_id", async (req, res) => {
 router.delete("/", auth, async (req, res) => {
   try {
     // @todo - remove users posts
-
+    await Post.deleteMany({ user: req.user.id})
     // Remove Profile
     await Profile.findOneAndRemove({ user: req.user.id });
     // Remove User
@@ -260,7 +261,7 @@ router.put(
       check("school", "School is required").not().isEmpty(),
       check("degree", "Degree is required").not().isEmpty(),
       check("from", "From is required").not().isEmpty(),
-      check("fieldofStudy", "Field is required").not().isEmpty(),
+      check("fieldofstudy", "Field is required").not().isEmpty(),
     ],
   ],
   async (req, res) => {
@@ -269,13 +270,13 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { school, degree, fieldofStudy, from, to, current, description } =
+    const { school, degree, fieldofstudy, from, to, current, description } =
       req.body;
 
     const newEdu = {
       school,
       degree,
-      fieldofStudy,
+      fieldofstudy,
       from,
       to,
       current,

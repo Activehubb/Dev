@@ -54,16 +54,18 @@ router.post('/', [
         }
       }
 
-      jwt.sign(
+       jwt.sign(
         payload,
         config.get('jwtToken'),
         { expiresIn: 36000 },
         (err, token) => {
-          if (err) throw err;
-          res.json(token)
+          if (err) console.log(err);
+          res.json({ token })
         })
+      
       console.log(req.body)
-      res.send('User Login')
+      console.log('User Login')
+      // res.json(token);
 
     } catch (err) {
       console.error(err.message)
